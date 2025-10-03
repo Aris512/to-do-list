@@ -339,6 +339,10 @@ export default function Home() {
         <div className="text-sm text-center [&>code]:font-medium [&>code]:text-[#a599ff] bg-sand-12 text-sand-1 fixed bottom-0 left-0 right-0 py-2">
           Route for this page is registered in <code>start/routes.ts</code> file, rendering{' '}
           <code>inertia/pages/home.tsx</code> template
+          <br />
+          <a href="/todos" className="text-blue-400 hover:text-blue-300 underline">
+            📝 Ir a la aplicación de Todos
+          </a>
         </div>
       </div>
     </>

@@ -8,10 +8,14 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import TodosController from '#controllers/todos'
+
+// Página de inicio
 router.on('/').renderInertia('home')
 
-router.get('/todos', 'todos.index')
-router.post('/todos', 'todos.store')
-router.put('/todos/:id', 'todos.update')
-router.delete('/todos/:id', 'todos.destroy')
+// Rutas de todos
+router.get('/todos', [TodosController, 'index'])
+router.post('/todos', [TodosController, 'store'])
+router.put('/todos/:id', [TodosController, 'update'])
+router.delete('/todos/:id', [TodosController, 'destroy'])
 
