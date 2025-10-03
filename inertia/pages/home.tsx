@@ -341,7 +341,7 @@ export default function Home() {
           <code>inertia/pages/home.tsx</code> template
           <br />
           <a href="/todos" className="text-blue-400 hover:text-blue-300 underline">
-            📝 Ir a la aplicación de Todos
+            📝 Ir a la aplicación de To-do List
           </a>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function Todos({ todos }: TodosPageProps) {
     }
   
     const handleDelete = (id: number) => {
-      if (confirm('¿Estás seguro de que quieres eliminar este todo?')) {
+      if (confirm('¿Estás seguro de Eliminar esta tarea?')) {
         router.delete(`/todos/${id}`)
       }
     }
@@ -49,11 +49,9 @@ export default function Todos({ todos }: TodosPageProps) {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              📝 Lista de Todos
+              To-Do List
             </h1>
-            <p className="text-gray-600">
-              Organiza tus tareas de manera eficiente
-            </p>
+
           </div>
 
           {/* Formulario para agregar nuevo todo */}
@@ -69,7 +67,7 @@ export default function Todos({ todos }: TodosPageProps) {
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                className="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
               >
                 Agregar
               </button>
@@ -82,11 +80,8 @@ export default function Todos({ todos }: TodosPageProps) {
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">📋</div>
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                  No hay todos aún
+                  No hay tareas aún
                 </h3>
-                <p className="text-gray-500">
-                  ¡Agrega tu primera tarea arriba!
-                </p>
               </div>
             ) : (
               todos.map((todo) => (
@@ -130,15 +125,11 @@ export default function Todos({ todos }: TodosPageProps) {
                   {/* Botón eliminar */}
                   <button
                     onClick={() => handleDelete(todo.id)}
-                    className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                    title="Eliminar todo"
+                    className="p-2 text-red-500 hover:bg-red-50 hover:text-red-600 rounded-lg transition-all duration-200 group"
+                    title="Eliminar tarea"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fillRule="evenodd"
-                        d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9zM4 5a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM6 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z"
-                        clipRule="evenodd"
-                      />
+                    <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7ZM9 8H11V17H9V8ZM13 8H15V17H13V8Z"/>
                     </svg>
                   </button>
                 </div>
@@ -150,7 +141,7 @@ export default function Todos({ todos }: TodosPageProps) {
           <div className="mt-8 text-center">
             <Link
               href="/"
-              className="text-blue-600 hover:text-blue-800 transition-colors"
+              className="text-gray-600 hover:text-blue-800 transition-colors"
             >
               ← Volver al inicio
             </Link>
